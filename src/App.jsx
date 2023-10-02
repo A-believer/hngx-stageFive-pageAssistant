@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AnimatedComponent from './components/AnimatedComponent';
+import video from "./assets/assistant.mp4"
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState('#ffffff');
@@ -56,9 +56,9 @@ function App() {
         </div>
         {message && (
         <div className={`px-4 mx-3 absolute top-[${boxPosition.top}px] left-[${boxPosition.left}px] z-10 bg-black/30 text-black p-2.5 rounded-md w-[200px]`} style={boxPosition}>
-          <div className='w-20 h-20'>
-          <AnimatedComponent/>
-          </div>
+          <video className='w-full h-full' autoPlay loop muted>
+            <source src={video}type="video/mp4" />
+          </video>
             {message}
           </div>
         )}
